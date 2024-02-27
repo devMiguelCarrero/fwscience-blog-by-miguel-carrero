@@ -1,0 +1,28 @@
+@import '@/shared/common/variables/colors';
+@import '@/shared/common/variables/sizes';
+@import '@/shared/common/variables/variables';
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  border-bottom: $border-declaration;
+  border-top: $border-declaration;
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $size-e-l;
+    padding: $size-e-xl;
+
+    &--main {
+      background-color: $intense-pink;
+      border-right: $border-declaration;
+    }
+
+    &--secondary {
+      background-color: $cool-turquoise;
+    }
+  }
+}
