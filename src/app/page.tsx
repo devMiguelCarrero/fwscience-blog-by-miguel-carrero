@@ -2,9 +2,12 @@ import Paragraph from '@/components/Atoms/Paragraph';
 import Title from '@/components/Atoms/Title';
 import Container from '@/components/Atoms/container';
 import Header from '@/components/Molecules/Header';
+import { Post, getAllPosts } from '@/shared/lib/posts';
 import Link from 'next/link';
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getAllPosts();
+
   return (
     <main className="main">
       <Header secondary={<></>}>
@@ -27,6 +30,19 @@ export default function Home() {
           </Link>
         </Paragraph>
       </Container>
+      <Container>
+        {posts &&
+          posts.map((post: Post) => (
+            <div key={`post-${post.id}`}>
+              <Title>{post.title}</Title>
+              <Link href={`/${post.id}`}>
+                <Paragraph>{post.body}</Paragraph>
+              </Link>
+            </div>
+          ))}
+      </Container>
     </main>
   );
 }
+
+export const revalidate = 3600; // revalidate at most every hour
