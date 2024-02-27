@@ -1,0 +1,17 @@
+@import './colors';
+@import './sizes';
+
+// Shadows
+$shadow-standard: 0px 4px 6px 0px #00000012;
+
+//Borders
+$border-color: $main-color;
+$border-size: $size-e-xxxxxs;
+$border-declaration: solid $border-size $border-color;
+
+//Radius
+$main-border-radius: $size-e-xxs;
+
+@function main-border-standard() {
+  @return solid $border-weight $border-color;
+}

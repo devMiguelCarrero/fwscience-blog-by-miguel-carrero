@@ -1,0 +1,23 @@
+@import '../variables/colors.scss';
+
+@import '../variables/colors.scss';
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: $serene-purple;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: $opaque-yellow;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
