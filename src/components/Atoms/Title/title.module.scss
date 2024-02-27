@@ -1,0 +1,26 @@
+@import '@/shared/common/variables/typography';
+@import '@/shared/common/variables/colors';
+
+.title {
+  &__excerpt {
+    font-size: 0.7em;
+  }
+  color: $main-color;
+
+  &--regular {
+    @include title-size;
+  }
+
+  &--colossal {
+    @include title-colossal-size;
+    .title__excerpt {
+      font-size: 0.6em;
+    }
+  }
+
+  &--massive {
+    .title__excerpt {
+      font-size: 1.4em;
+    }
+  }
+}

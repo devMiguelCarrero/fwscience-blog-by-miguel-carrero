@@ -1,0 +1,6 @@
+@import '@/shared/common/variables/typography';
+
+.paragraph {
+  @include paragraph-size;
+  padding: 0;
+}

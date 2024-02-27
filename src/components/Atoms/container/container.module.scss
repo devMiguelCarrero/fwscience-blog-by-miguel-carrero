@@ -1,0 +1,16 @@
+@import '@/shared/common/variables/sizes';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $size-e-l;
+  width: 100%;
+  max-width: $container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding: $size-e-xl $size-e-xxs;
+
+  &--full {
+    max-width: 100%;
+  }
+}
