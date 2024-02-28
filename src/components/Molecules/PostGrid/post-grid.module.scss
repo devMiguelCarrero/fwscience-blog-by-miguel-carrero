@@ -21,6 +21,7 @@
     @include paragraph-size;
     padding: $size-e-xxxs $size-e-xs;
     border: none;
+    border-top: $border-declaration;
     border-bottom: $border-declaration;
     outline: none;
   }
