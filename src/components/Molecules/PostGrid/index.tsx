@@ -31,7 +31,7 @@ export const SinglePost: FC<SinglePostProps> = ({
   return (
     <article className={classNames}>
       <div className={classes['post-grid__post__content']}>
-        <AtomLink href={`/${id}`}>
+        <AtomLink href={`/posts/${id}`}>
           <Title align="center">{title}</Title>
         </AtomLink>
         <AtomLink href={`/posts/${id}`}>
