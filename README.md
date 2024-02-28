@@ -5,12 +5,13 @@ This is a custom Blog made with Next.js by devMiguelCarrero with the purpose of 
 ## Version controls
 
 This application was developed an tested under the following versions
+
 - Node.js **v20.10.0**
 - npm **v10.2.3**
 - git **2.44.0.windows.1**
 
-
 ## Getting Started
+
 - First, install the npm components
 
 ```bash
@@ -37,13 +38,11 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
 ## Site structure
 
-This web application based in Next.js was builded under Atomic design structure combined with Next.js App Routing and has 3 main folders inside **/src** folder:
+- You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- This web application based in Next.js was builded under Atomic design structure combined with Next.js App Routing and has 3 main folders inside **/src** folder:
 
 ### ./app
 
