@@ -2,16 +2,23 @@ import Paragraph from '@/components/Atoms/Paragraph';
 import Title from '@/components/Atoms/Title';
 import Container from '@/components/Atoms/container';
 import Header from '@/components/Molecules/Header';
-import { Post, getAllPosts } from '@/shared/lib/posts';
-import PostGrid, { SinglePost } from '@/components/Molecules/PostGrid';
+import { getAllPosts } from '@/shared/lib/posts';
+import PostGrid from '@/components/Molecules/PostGrid';
 import AtomLink from '@/components/Atoms/AtomLink';
+
+import AuthorImage from '@/shared/assets/img/author-image.jpg';
+import Image from 'next/image';
 
 export default async function Home() {
   const posts = await getAllPosts();
 
   return (
     <main className="main">
-      <Header secondary={<></>}>
+      <Header
+        secondary={
+          <Image src={AuthorImage} width={460} alt="devMiguelCarrero" />
+        }
+      >
         <Title variant="colossal" tag="h1">
           Next.js Test Blog by devMiguelCarrero
         </Title>
