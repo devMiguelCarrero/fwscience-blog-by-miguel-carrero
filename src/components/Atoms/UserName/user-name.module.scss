@@ -1,0 +1,13 @@
+@import '@/shared/common/variables/sizes';
+
+.user-name {
+  display: flex;
+  align-items: center;
+  font-size: inherit;
+  gap: $size-e-xxxs;
+  svg {
+    display: inline-block;
+    width: 1.5em;
+    height: auto;
+  }
+}
