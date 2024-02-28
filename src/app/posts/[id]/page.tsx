@@ -3,7 +3,12 @@ import Separator from '@/components/Atoms/Separator';
 import Title from '@/components/Atoms/Title';
 import UserName from '@/components/Atoms/UserName';
 import Container from '@/components/Atoms/container';
-import { Post, getAllPosts, getSinglePost } from '@/shared/lib/posts';
+import {
+  Post,
+  generateSummary,
+  getAllPosts,
+  getSinglePost,
+} from '@/shared/lib/posts';
 import { User, getSingleUser } from '@/shared/lib/users';
 import { notFound } from 'next/navigation';
 
@@ -46,6 +51,14 @@ export const generateStaticParams = async () => {
     params: { id: post.id.toLocaleString() },
   }));
   return paths;
+};
+
+export const generateMetadata = async ({ params }: PostPageProps) => {
+  const post: Post | null = await getSinglePost(parseInt(params.id));
+  return {
+    title: post?.title || '',
+    description: post?.body ? generateSummary(post?.body, false) : '',
+  };
 };
 
 export const revalidate = 3600; // revalidate at most every hour
