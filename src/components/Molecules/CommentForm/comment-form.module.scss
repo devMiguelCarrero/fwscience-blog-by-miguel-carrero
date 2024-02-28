@@ -1,0 +1,46 @@
+@import '@/shared/common/variables/sizes';
+@import '@/shared/common/variables/colors';
+@import '@/shared/common/variables/variables';
+@import '@/shared/common/variables/typography';
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  padding: $size-e-xxs;
+  gap: $size-e-xxs;
+  background-color: color-mix(in srgb, $opaque-yellow, white 70%);
+  border: $border-declaration;
+
+  &__field {
+    padding: $size-e-xxs;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $size-e-xxxs;
+
+    input,
+    textarea,
+    select {
+      @include button-size;
+      padding: $size-e-xxxs;
+      width: 100%;
+    }
+
+    button {
+      @include button-size;
+      display: table;
+      padding: $size-e-xxs;
+      background-color: $intense-pink;
+      border: $border-declaration;
+      color: $main-color;
+      cursor: pointer;
+      &:hover {
+        background-color: $cool-turquoise;
+      }
+    }
+
+    label {
+      @include paragraph-small-size;
+    }
+  }
+}

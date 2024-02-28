@@ -10,9 +10,12 @@ import {
   getSinglePost,
 } from '@/shared/lib/posts';
 import { User, getSingleUser } from '@/shared/lib/users';
+import { Comment, getCommentsByPost } from '@/shared/lib/comments';
 import { notFound } from 'next/navigation';
 
 import classes from './page.module.scss';
+import CommentGrid from '@/components/Molecules/CommentGrid';
+import CommentForm from '@/components/Molecules/CommentForm';
 
 interface PostPageProps {
   params: {
@@ -21,7 +24,8 @@ interface PostPageProps {
 }
 
 export default async function PostPage({ params }: PostPageProps) {
-  const post: Post | null = await getSinglePost(parseInt(params.id));
+  const postId = parseInt(params.id);
+  const post: Post | null = await getSinglePost(postId);
   if (!post) {
     notFound();
   }
@@ -29,6 +33,11 @@ export default async function PostPage({ params }: PostPageProps) {
   let user: User | null = await getSingleUser(post.userId);
   if (!user) {
     user = { id: 0, name: 'Unkown User' };
+  }
+
+  let comments: Comment[] | null = await getCommentsByPost(postId);
+  if (!comments) {
+    comments = [];
   }
 
   return (
@@ -42,6 +51,12 @@ export default async function PostPage({ params }: PostPageProps) {
         <Paragraph>
           <UserName>{user.name}</UserName>
         </Paragraph>
+        <Separator />
+        <Title tag="h3">Leave a Comment</Title>
+        <CommentForm />
+        <Separator />
+        <Title tag="h3">Comments</Title>
+        <CommentGrid comments={comments} />
       </Container>
     </article>
   );

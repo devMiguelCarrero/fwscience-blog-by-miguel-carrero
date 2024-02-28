@@ -1,0 +1,24 @@
+@import '@/shared/common/variables/sizes';
+@import '@/shared/common/variables/colors';
+@import '@/shared/common/variables/variables';
+
+.comment-grid {
+  display: flex;
+  flex-direction: column;
+  gap: $size-e-xxs;
+  background-color: color-mix(in srgb, $cool-turquoise, white 70%);
+  border: $border-declaration;
+
+  &__comment {
+    padding: $size-e-xxs;
+    display: flex;
+    flex-direction: column;
+    gap: $size-e-xxs;
+    &:not(:last-child) {
+      border-bottom: $border-declaration;
+    }
+    &:hover {
+      background-color: color-mix(in srgb, $cool-turquoise, white 65%);
+    }
+  }
+}
