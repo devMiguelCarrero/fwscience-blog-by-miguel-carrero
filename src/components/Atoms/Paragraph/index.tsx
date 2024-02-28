@@ -6,7 +6,7 @@ import { classNames } from '@/shared/types/types';
 
 interface Props {
   children: React.ReactNode;
-  variant?: 'regular' | 'medium' | 'high';
+  variant?: 'regular' | 'small';
   className?: classNames;
   align?: 'left' | 'right' | 'center';
 }

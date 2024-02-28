@@ -3,4 +3,8 @@
 .paragraph {
   @include paragraph-size;
   padding: 0;
+
+  &--small {
+    @include paragraph-small-size;
+  }
 }
