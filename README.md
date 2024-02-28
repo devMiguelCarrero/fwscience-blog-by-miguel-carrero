@@ -4,7 +4,7 @@ This is a custom Blog made with Next.js by devMiguelCarrero with the purpose of 
 
 ## Version controls
 
-This application was developed an tested under the following versions
+This application was developed and tested under the following versions
 
 - Node.js **v20.10.0**
 - npm **v10.2.3**
