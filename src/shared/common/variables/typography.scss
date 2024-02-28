@@ -53,6 +53,21 @@ $title-line-height: 1.4;
   }
 }
 
+@mixin paragraph-small-size {
+  font-family: $main-font;
+  font-size: 18px;
+  line-height: $main-line-height;
+  font-weight: 200;
+  letter-spacing: 0.01em;
+
+  &:not([class]):not(:last-child):not(:only-child) {
+    margin-bottom: 4px;
+  }
+  @media (max-width: 992px) {
+    font-size: 16px;
+  }
+}
+
 @mixin menu-item-size {
   font-family: $main-font;
   font-size: 18px;
