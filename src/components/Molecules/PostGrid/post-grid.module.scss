@@ -1,0 +1,60 @@
+@import '@/shared/common/variables/colors';
+@import '@/shared/common/variables/sizes';
+@import '@/shared/common/variables/variables';
+@import '@/shared/common/variables/media-queries';
+@import '@/shared/common/variables/transitions';
+
+.post-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: $border-declaration;
+  border-top: $border-declaration;
+
+  @include tablet-lg {
+    grid-template-columns: 1fr;
+  }
+
+  &__post {
+    padding: $size-e-xl;
+    background-color: $intense-pink;
+    display: flex;
+    border-bottom: $border-declaration;
+
+    @for $i from 1 through length($post-colors) {
+      &:nth-child(4n + #{$i}) {
+        $color-pair: nth($post-colors, $i);
+
+        background-color: nth($color-pair, 1);
+        &:hover {
+          .post-grid__post__content {
+            border-color: nth($color-pair, 2);
+          }
+        }
+      }
+    }
+
+    &:nth-child(odd) {
+      border-right: $border-declaration;
+
+      @include tablet-lg {
+        border-right: none;
+      }
+    }
+
+    &__content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: $size-e-s;
+      border: solid $size-e-xxxxs transparent;
+      padding: $size-e-xs;
+      transition: main-transition($attribute: border-color);
+
+      @include tablet-lg {
+        gap: $size-e-m;
+      }
+    }
+  }
+}
