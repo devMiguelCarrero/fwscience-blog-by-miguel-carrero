@@ -34,7 +34,7 @@ export const SinglePost: FC<SinglePostProps> = ({
         <AtomLink href={`/${id}`}>
           <Title align="center">{title}</Title>
         </AtomLink>
-        <AtomLink href={`/${id}`}>
+        <AtomLink href={`/posts/${id}`}>
           <Paragraph align="center">{generateSummary(body)}</Paragraph>
         </AtomLink>
       </div>
