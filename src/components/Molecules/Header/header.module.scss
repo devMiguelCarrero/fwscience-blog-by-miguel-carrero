@@ -1,6 +1,7 @@
 @import '@/shared/common/variables/colors';
 @import '@/shared/common/variables/sizes';
 @import '@/shared/common/variables/variables';
+@import '@/shared/common/variables/media-queries';
 
 .header {
   position: relative;
@@ -9,16 +10,27 @@
   border-bottom: $border-declaration;
   border-top: $border-declaration;
 
+  @include tablet-lg {
+    flex-direction: column;
+  }
+
   &__content {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: $size-e-l;
     padding: $size-e-xl;
+    @include tablet-lg {
+      gap: $size-e-s;
+    }
 
     &--main {
       background-color: $intense-pink;
       border-right: $border-declaration;
+      @include tablet-lg {
+        border-right: none;
+        border-bottom: $border-declaration;
+      }
     }
 
     &--secondary {
