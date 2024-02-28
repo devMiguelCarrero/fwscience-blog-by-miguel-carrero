@@ -26,22 +26,16 @@ export default async function Home() {
           This is a simple call to action only with the purpouse of separate the
           blog grid from the header and add an extra content. To see more
           projects related to Next.js and headless WordPress, please check my{' '}
-          <AtomLink color="serene-purple" href="https://github.com/devMiguelCarrero" target="_blank">
+          <AtomLink
+            color="serene-purple"
+            href="https://github.com/devMiguelCarrero"
+            target="_blank"
+          >
             Github
           </AtomLink>
         </Paragraph>
       </Container>
-      <PostGrid>
-        {posts &&
-          posts.map((post: Post) => (
-            <SinglePost
-              title={post.title}
-              id={post.id}
-              body={post.body}
-              key={`post-${post.id}`}
-            />
-          ))}
-      </PostGrid>
+      <PostGrid posts={posts}></PostGrid>
     </main>
   );
 }
