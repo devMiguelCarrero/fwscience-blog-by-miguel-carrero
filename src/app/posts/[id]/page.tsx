@@ -34,7 +34,9 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <article className={classes['article']}>
       <Container>
-        <Title variant="colossal">{post.title}</Title>
+        <Title tag="h1" variant="colossal">
+          {post.title}
+        </Title>
         <Separator />
         <Paragraph>{post.body}</Paragraph>
         <Paragraph>
