@@ -1,0 +1,6 @@
+@import '@/shared/common/variables/colors';
+
+.article {
+  min-height: 100vh;
+  background-color: color-mix(in srgb, $serene-purple, white 85%);
+}
