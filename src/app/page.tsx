@@ -3,7 +3,8 @@ import Title from '@/components/Atoms/Title';
 import Container from '@/components/Atoms/container';
 import Header from '@/components/Molecules/Header';
 import { Post, getAllPosts } from '@/shared/lib/posts';
-import Link from 'next/link';
+import PostGrid, { SinglePost } from '@/components/Molecules/PostGrid';
+import AtomLink from '@/components/Atoms/AtomLink';
 
 export default async function Home() {
   const posts = await getAllPosts();
@@ -25,22 +26,22 @@ export default async function Home() {
           This is a simple call to action only with the purpouse of separate the
           blog grid from the header and add an extra content. To see more
           projects related to Next.js and headless WordPress, please check my{' '}
-          <Link href="https://github.com/devMiguelCarrero" target="_blank">
+          <AtomLink color="serene-purple" href="https://github.com/devMiguelCarrero" target="_blank">
             Github
-          </Link>
+          </AtomLink>
         </Paragraph>
       </Container>
-      <Container>
+      <PostGrid>
         {posts &&
           posts.map((post: Post) => (
-            <div key={`post-${post.id}`}>
-              <Title>{post.title}</Title>
-              <Link href={`/${post.id}`}>
-                <Paragraph>{post.body}</Paragraph>
-              </Link>
-            </div>
+            <SinglePost
+              title={post.title}
+              id={post.id}
+              body={post.body}
+              key={`post-${post.id}`}
+            />
           ))}
-      </Container>
+      </PostGrid>
     </main>
   );
 }

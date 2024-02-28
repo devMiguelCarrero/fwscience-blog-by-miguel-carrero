@@ -1,0 +1,13 @@
+@import '@/shared/common/variables/colors';
+
+.atom-link {
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @each $name, $color in $main-colors {
+    &--#{$name} {
+      color: $color;
+    }
+  }
+}

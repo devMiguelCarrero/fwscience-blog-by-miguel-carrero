@@ -39,3 +39,12 @@ export const getSinglePost = async (id: number): Promise<Post | null> => {
     return null;
   }
 };
+
+export const generateSummary = (body: string, dots: boolean = true) => {
+  const wordNum = 50;
+  const words = body.split(' '); // Divide el string en un array de palabras
+  if (words.length > wordNum) {
+    return `${words.slice(0, wordNum).join(' ')}${dots ? '...' : ''}`;
+  }
+  return body;
+};

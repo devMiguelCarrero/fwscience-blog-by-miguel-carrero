@@ -6,11 +6,24 @@ $color-text: $midnight-blue;
 $color-background: #f9f9f9;
 
 //Site main colors
-$intense-pink: #FF90E8;
-$opaque-yellow: #FFC900;
-$serene-purple: #B23386;
-$cool-turquoise: #23A094;
-$palid-red: #E2442F;
+$intense-pink: #ff90e8;
+$opaque-yellow: #ffc900;
+$serene-purple: #b23386;
+$cool-turquoise: #23a094;
+$palid-red: #e2442f;
+
+//Colors Array
+$main-colors: ('intense-pink' $intense-pink), ('opaque-yellow' $opaque-yellow),
+  ('serene-purple' $serene-purple), ('cool-turquoise' $cool-turquoise),
+  ('palid-red' $palid-red);
+
+//Post Colors
+$post-colors: (
+  (#{$intense-pink} #{$cool-turquoise}),
+  (#{$opaque-yellow} #{$palid-red}),
+  (#{$cool-turquoise} #{$intense-pink}),
+  (#{$palid-red} #{$opaque-yellow})
+);
 
 // TINTS
 $color-sat-50: #f3f8fe;
