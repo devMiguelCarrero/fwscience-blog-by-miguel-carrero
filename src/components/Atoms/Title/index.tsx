@@ -9,6 +9,7 @@ interface Props {
   variant?: 'regular' | 'colossal' | 'massive';
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   className?: classNames;
+  align?: 'left' | 'right' | 'center';
 }
 
 const Title: React.FC<Props> = ({
@@ -16,6 +17,7 @@ const Title: React.FC<Props> = ({
   tag = 'h2',
   variant = 'regular',
   className,
+  align = 'left',
   ...props
 }) => {
   const classNames = cx(classes.title, {
@@ -26,7 +28,7 @@ const Title: React.FC<Props> = ({
   const Tag = tag;
 
   return (
-    <Tag className={classNames} {...props}>
+    <Tag {...props} style={{ textAlign: align }} className={classNames}>
       {children}
     </Tag>
   );
