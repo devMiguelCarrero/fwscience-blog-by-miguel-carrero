@@ -1,6 +1,28 @@
 {
   "name": "fwscience-blog-by-miguel-carrero",
-  "version": "0.1.0",
+  "description": "This is a custom Blog made with Next.js by devMiguelCarrero with the purpose of accomplish a coding test sent by fwscience",
+  "version": "1.0.0",
+  "author": "devMiguelCarrero",
+  "keywords": [
+    "Next.js",
+    "boilerplate",
+    "SCSS",
+    "atomic-design",
+    "react",
+    "reusable-components",
+    "application-development",
+    "web-development",
+    "structured-styling",
+    "scalable-architecture"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devMiguelCarrero/fwscience-blog-by-miguel-carrero"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://www.paypal.com/donate/?hosted_button_id=RKK3G3FWEAMLU"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
